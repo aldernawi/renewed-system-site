@@ -4,6 +4,12 @@ import type { Product, CardInfo, Feature } from './types';
 import { Award, AtSign, Beef, ChevronLeft, Eye, Globe, Grape, MapPin, MessageSquare, Phone, PhoneCall, Send, ShieldCheck, ShoppingCart, Target, ThumbsUp, User, Wheat, Zap, Mail, Linkedin, Twitter, Instagram, Smartphone } from 'lucide-react';
 import heroBackground from './maleha-bg.jpg';
 import partnershipBackground from './hero-bg.jpeg';
+import maleha1 from './maleha1.jpeg';
+import maleha2 from './maleha2.jpeg';
+import maleha3 from './maleha3.jpeg';
+import maleha4 from './maleha4.jpeg';
+import maleha5 from './maleha5.jpeg';
+import maleha6 from './maleha6.jpeg';
 
 // HELPER: Scroll Animation Component
 const AnimatedSection: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => {
@@ -224,7 +230,7 @@ const PartnershipSection: React.FC = () => {
             <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <AnimatedSection>
-                        <div className="relative p-2 border-2 border-[#C9A86A]/30 rounded-2xl">
+                        <div className="relative p-2 border-2 border-[#C9A86A]/30 rounded-2xl overflow-hidden">
                              <div className="absolute -inset-2 bg-[radial-gradient(ellipse_at_center,_rgba(201,168,106,0.2)_0%,_transparent_60%)] -z-10"></div>
                              <img src={partnershipBackground} alt="Maliha Salami" className="rounded-xl w-full h-auto object-cover" />
                         </div>
@@ -253,6 +259,45 @@ const PartnershipSection: React.FC = () => {
                             </li>
                         </ul>
                     </AnimatedSection>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+// SECTION: Exclusive Products Gallery
+const malehaProducts = [
+    { id: 1, image: maleha1 },
+    { id: 2, image: maleha2 },
+    { id: 3, image: maleha3 },
+    { id: 4, image: maleha4 },
+    { id: 5, image: maleha5 },
+    { id: 6, image: maleha6 },
+];
+
+const ExclusiveProductsSection: React.FC = () => {
+    return (
+        <section className="py-24 bg-[#2B1710]" id="exclusive-products">
+            <div className="container mx-auto px-4">
+                <AnimatedSection className="text-center mb-16">
+                    <span className="px-4 py-2 rounded-full bg-[#5A0F0F] text-[#E5C690] tracking-[0.2em] text-xs">منتجاتنا</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-4">تشكيلة مليحة الحصرية</h2>
+                    <p className="text-white/70 max-w-3xl mx-auto">مجموعة مختارة بعناية من منتجات مليحة للسلامي، تمثل قمة الإبداع في الصناعات الغذائية الفاخرة.</p>
+                </AnimatedSection>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {malehaProducts.map(product => (
+                        <AnimatedSection key={product.id}>
+                            <div className="group relative rounded-[32px] overflow-hidden border border-transparent bg-gradient-to-b from-[#4B1D12] to-[#1C0E08] shadow-[0_25px_65px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2">
+                                <div className="absolute inset-0 border border-[#C9A86A]/30 rounded-[32px] opacity-50 group-hover:opacity-100 blur-sm group-hover:blur-0 transition duration-500"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 mix-blend-multiply"></div>
+                                <img src={product.image} alt={`منتج مليحة ${product.id}`} className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <div className="absolute inset-0 pointer-events-none">
+                                    <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-700 bg-gradient-to-t from-[#E5C690]/25 via-transparent to-transparent"></div>
+                                </div>
+                                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-[#E5C690] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            </div>
+                        </AnimatedSection>
+                    ))}
                 </div>
             </div>
         </section>
@@ -397,6 +442,7 @@ function App() {
         <ProductsSection />
         <WhyUsSection />
         <PartnershipSection />
+        <ExclusiveProductsSection />
         <ContactSection />
       </main>
       <Footer />
