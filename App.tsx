@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import type { Product, CardInfo, Feature } from './types';
-import { Award, Beef, ChevronLeft, Eye, Globe, Grape, MessageSquare, Phone, Send, ShieldCheck, ShoppingCart, Target, ThumbsUp, User, Wheat, Zap, Mail, MapPin, Linkedin, Twitter, Instagram, Smartphone } from 'lucide-react';
+import { Award, AtSign, Beef, ChevronLeft, Eye, Globe, Grape, MapPin, MessageSquare, Phone, PhoneCall, Send, ShieldCheck, ShoppingCart, Target, ThumbsUp, User, Wheat, Zap, Mail, Linkedin, Twitter, Instagram, Smartphone } from 'lucide-react';
 import heroBackground from './maleha-bg.jpg';
 import partnershipBackground from './hero-bg.jpeg';
 
@@ -77,12 +77,12 @@ const HeroSection: React.FC = () => {
                         رواد استيراد أجود المواد الغذائية، والمواشي، واللحوم الطازجة والمجمدة.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button className="px-8 py-3 bg-[#450505] text-white rounded-lg gold-border-glow text-lg font-semibold w-full sm:w-auto">
+                        <a href="#products" className="px-8 py-3 bg-[#450505] text-white rounded-lg gold-border-glow text-lg font-semibold w-full sm:w-auto text-center block">
                             اكتشف منتجاتنا
-                        </button>
-                        <button className="px-8 py-3 bg-gradient-to-r from-[#E5C690] to-[#C9A86A] text-[#450505] rounded-lg font-semibold text-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto">
+                        </a>
+                        <a href="#contact" className="px-8 py-3 bg-gradient-to-r from-[#E5C690] to-[#C9A86A] text-[#450505] rounded-lg font-semibold text-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto text-center block">
                             تواصل معنا
-                        </button>
+                        </a>
                     </div>
                 </AnimatedSection>
             </div>
@@ -142,7 +142,7 @@ const products: Product[] = [
     { id: 1, name: 'لحوم مجمدة فاخرة', category: 'تشكيلات مميزة', icon: Beef },
     { id: 2, name: 'فاكهة استوائية مختارة', category: 'الفواكه النادرة', icon: Grape },
     { id: 3, name: 'مواشي حية ممتازة', category: 'سلالات عالمية', icon: Zap },
-    { id: 4, name: 'حبوب وبقوليات عضوية', category: 'المواد الجافة', icon: Wheat },
+    { id: 4, name: 'حبوب وبقوليات ', category: 'المواد الجافة', icon: Wheat },
 ];
 
 const ProductsSection: React.FC = () => {
@@ -268,32 +268,46 @@ const ContactSection: React.FC = () => {
                     <h2 className="text-4xl md:text-5xl font-bold text-[#3A2417] mb-4">تواصل معنا</h2>
                     <div className="w-24 h-1 bg-[#C9A86A] mx-auto"></div>
                 </AnimatedSection>
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                     <AnimatedSection>
-                        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="relative">
-                                <User className="absolute top-1/2 -translate-y-1/2 right-4 w-5 h-5 text-[#C9A86A]" />
-                                <input type="text" placeholder="الاسم الكامل" className="w-full bg-white/50 backdrop-blur-sm border border-[#C9A86A]/40 rounded-lg py-3 pr-12 pl-4 text-[#3A2417] placeholder:text-[#3A2417]/60 focus:outline-none focus:ring-2 focus:ring-[#C9A86A]" />
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                            <form className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white/80 backdrop-blur rounded-3xl p-8 shadow-[0_20px_50px_rgba(58,36,23,0.12)]">
+                                <div className="relative">
+                                    <User className="absolute top-1/2 -translate-y-1/2 right-4 w-5 h-5 text-[#C9A86A]" />
+                                    <input type="text" placeholder="الاسم الكامل" className="w-full bg-white border border-[#C9A86A]/30 rounded-xl py-3 pr-12 pl-4 text-[#3A2417] placeholder:text-[#3A2417]/60 focus:outline-none focus:ring-2 focus:ring-[#C9A86A]" />
+                                </div>
+                                <div className="relative">
+                                    <Mail className="absolute top-1/2 -translate-y-1/2 right-4 w-5 h-5 text-[#C9A86A]" />
+                                    <input type="email" placeholder="البريد الإلكتروني" className="w-full bg-white border border-[#C9A86A]/30 rounded-xl py-3 pr-12 pl-4 text-[#3A2417] placeholder:text-[#3A2417]/60 focus:outline-none focus:ring-2 focus:ring-[#C9A86A]" />
+                                </div>
+                                <div className="md:col-span-2 relative">
+                                    <Phone className="absolute top-1/2 -translate-y-1/2 right-4 w-5 h-5 text-[#C9A86A]" />
+                                    <input type="tel" placeholder="رقم الهاتف" className="w-full bg-white border border-[#C9A86A]/30 rounded-xl py-3 pr-12 pl-4 text-[#3A2417] placeholder:text-[#3A2417]/60 focus:outline-none focus:ring-2 focus:ring-[#C9A86A]" />
+                                </div>
+                                <div className="md:col-span-2 relative">
+                                    <MessageSquare className="absolute top-5 right-4 w-5 h-5 text-[#C9A86A]" />
+                                    <textarea placeholder="رسالتك" rows={5} className="w-full bg-white border border-[#C9A86A]/30 rounded-xl py-4 pr-12 pl-4 text-[#3A2417] placeholder:text-[#3A2417]/60 focus:outline-none focus:ring-2 focus:ring-[#C9A86A] resize-none"></textarea>
+                                </div>
+                                <div className="md:col-span-2 text-center">
+                                    <button type="submit" className="px-10 py-4 bg-[#450505] text-white rounded-xl gold-border-glow text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-2 mx-auto">
+                                        <span>إرسال الرسالة</span>
+                                        <Send className="w-5 h-5" />
+                                    </button>
+                                </div>
+                            </form>
+                            <div className="w-full space-y-6">
+                                <div className="rounded-3xl border border-[#C9A86A]/30 overflow-hidden shadow-[0_20px_45px_rgba(58,36,23,0.12)]">
+                                    <iframe
+                                        title="Tripoli Office Map"
+                                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3352.3189998277912!2d13.270770584816429!3d32.83680448095392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDUwJzEyLjUiTiAxM8KwMTYnMDYuOSJF!5e0!3m2!1sar!2sly!4v1763370998065!5m2!1sar!2sly"
+                                        className="w-full h-[350px] border-0"
+                                        loading="lazy"
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
                             </div>
-                            <div className="relative">
-                                <Mail className="absolute top-1/2 -translate-y-1/2 right-4 w-5 h-5 text-[#C9A86A]" />
-                                <input type="email" placeholder="البريد الإلكتروني" className="w-full bg-white/50 backdrop-blur-sm border border-[#C9A86A]/40 rounded-lg py-3 pr-12 pl-4 text-[#3A2417] placeholder:text-[#3A2417]/60 focus:outline-none focus:ring-2 focus:ring-[#C9A86A]" />
-                            </div>
-                             <div className="md:col-span-2 relative">
-                                <Phone className="absolute top-1/2 -translate-y-1/2 right-4 w-5 h-5 text-[#C9A86A]" />
-                                <input type="tel" placeholder="رقم الهاتف" className="w-full bg-white/50 backdrop-blur-sm border border-[#C9A86A]/40 rounded-lg py-3 pr-12 pl-4 text-[#3A2417] placeholder:text-[#3A2417]/60 focus:outline-none focus:ring-2 focus:ring-[#C9A86A]" />
-                            </div>
-                            <div className="md:col-span-2 relative">
-                                <MessageSquare className="absolute top-5 right-4 w-5 h-5 text-[#C9A86A]" />
-                                <textarea placeholder="رسالتك" rows={5} className="w-full bg-white/50 backdrop-blur-sm border border-[#C9A86A]/40 rounded-lg py-4 pr-12 pl-4 text-[#3A2417] placeholder:text-[#3A2417]/60 focus:outline-none focus:ring-2 focus:ring-[#C9A86A] resize-none"></textarea>
-                            </div>
-                             <div className="md:col-span-2 text-center">
-                                <button type="submit" className="px-10 py-4 bg-[#450505] text-white rounded-lg gold-border-glow text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-2 mx-auto">
-                                    <span>إرسال الرسالة</span>
-                                    <Send className="w-5 h-5" />
-                                </button>
-                            </div>
-                        </form>
+                        </div>
                     </AnimatedSection>
                 </div>
             </div>
@@ -324,11 +338,23 @@ const Footer: React.FC = () => {
                     </div>
                     <div>
                         <h4 className="text-xl font-semibold text-white mb-4">معلومات الاتصال</h4>
-                        <ul className="space-y-3 text-sm">
-                            <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-[#C9A86A]" /><span>الرياض، المملكة العربية السعودية</span></li>
-                            <li className="flex items-center gap-3"><Mail className="w-4 h-4 text-[#C9A86A]" /><span>info@renewed-system.com</span></li>
-                            <li className="flex items-center gap-3"><Phone className="w-4 h-4 text-[#C9A86A]" /><span>+966 11 123 4567</span></li>
-                        </ul>
+                        <div className="flex flex-col gap-4 text-sm">
+                            <div className="flex items-center gap-4 bg-[#5a0f0f] text-white rounded-full px-4 py-3 shadow-[0_10px_25px_rgba(0,0,0,0.15)]">
+                                <span className="flex items-center justify-center w-10 h-10 rounded-2xl bg-black"><AtSign className="w-5 h-5" /></span>
+                                <span className="font-semibold break-all">Mahmoudbushaala4@gmail.com</span>
+                            </div>
+                            <div className="flex items-center gap-4 bg-[#5a0f0f] text-white rounded-full px-4 py-3 shadow-[0_10px_25px_rgba(0,0,0,0.15)]">
+                                <span className="flex items-center justify-center w-10 h-10 rounded-2xl bg-black"><PhoneCall className="w-5 h-5" /></span>
+                                <span className="font-semibold" dir="ltr">+218 92 515 6487</span>
+                            </div>
+                            <div className="flex items-center gap-4 bg-[#5a0f0f] text-white rounded-full px-4 py-3 shadow-[0_10px_25px_rgba(0,0,0,0.15)]">
+                                <span className="flex items-center justify-center w-10 h-10 rounded-2xl bg-black"><MapPin className="w-5 h-5" /></span>
+                                <div>
+                                    <p className="font-semibold">طرابلس / ليبيا</p>
+                                    <p className="text-white/70 text-xs">Tripoli - Libya</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                      <div>
                         <h4 className="text-xl font-semibold text-white mb-4">تابعنا</h4>
