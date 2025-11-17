@@ -240,7 +240,7 @@ const PartnershipSection: React.FC = () => {
                             <Award className="w-5 h-5"/>
                             <span className="font-semibold">شراكة حصرية</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4">الوكيل الرسمي لشركة <span className="gold-text">مليحة للسلامي</span></h2>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4">الوكيل الرسمي لشركة <span className="gold-text">مليحة </span></h2>
                         <p className="text-lg text-[#FFF8F1]/80 mb-8 leading-relaxed">
                             نفخر بكوننا الشريك الحصري والوكيل الرسمي لعلامة "مليحة" التجارية، نقدم لكم أفخر أنواع السلامي المصنعة وفقًا لأعلى معايير الجودة العالمية والطعم الأصيل.
                         </p>
